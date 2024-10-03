@@ -33,9 +33,15 @@ usr/bin/keytool -importcert -noprompt \
   -file /letsencrypt/isrgroot1.pem
 ```
 
+The PEM file can be downloaded with `cURL`.
+
+```bash
+curl -sS https://letsencrypt.org/certs/isrgrootx1.pem -o isrgrootx1.pem
+```
+
 ## How to build
 
 ```bash
 mvn clean package
-docker build -t eu.gcr.io/extenda/java8-certificate-test:8u102 .
+docker build -t extenda/java8-certificate-test:8u102 .
 ```

@@ -5,7 +5,7 @@ This is the repository for a Docker image that can be used to test LetsEncrypt c
 ## Usage
 
 ```bash
-docker run --rm eu.gcr.io/extenda/java8-certificate-test:8u102 \
+docker run --rm extenda/java8-certificate-test:8u102 \
   testrunner.hiiretail.com \
   letsencrypt.org
 ```
@@ -17,7 +17,7 @@ It's possible to apply a patch to support the [ISRG Root X1 LetsEncrypt certific
 Simply include `--patch` with the command.
 
 ```bash
-docker run --rm eu.gcr.io/extenda/java8-certificate-test:8u102 \
+docker run --rm extenda/java8-certificate-test:8u102 \
   --patch \
   testrunner.hiiretail.com \
   letsencrypt.org

@@ -4,6 +4,11 @@ This is the repository for a Docker image that can be used to test LetsEncrypt c
 
 ## Usage
 
+This program can be run containerized or on a local Java distribution. 
+Patching feature is only available on Docker.
+
+### Docker
+
 ```bash
 docker run --rm extenda/java8-certificate-test:8u102 \
   testrunner.hiiretail.com \
@@ -11,7 +16,7 @@ docker run --rm extenda/java8-certificate-test:8u102 \
 ```
 The command will exit with status 1 if it fails to connect to any of the domains.
 
-### Apply LetsEncrypt patch
+#### Apply LetsEncrypt patch
 
 It's possible to apply a patch to support the [ISRG Root X1 LetsEncrypt certificate](https://letsencrypt.org/certificates/).
 Simply include `--patch` with the command.
@@ -37,6 +42,15 @@ The PEM file can be downloaded with `cURL`.
 
 ```bash
 curl -sS https://letsencrypt.org/certs/isrgrootx1.pem -o isrgrootx1.pem
+```
+
+### Java
+
+First compile the program to obtain an executable jar file.
+
+```bash
+mvn clean package
+java -jar target/java8-certificate-test.jar letsencrypt.org
 ```
 
 ## How to build

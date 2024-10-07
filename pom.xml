@@ -22,6 +22,7 @@
   <dependencies/>
 
   <build>
+    <finalName>java8-certificate-test</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -29,31 +30,10 @@
         <configuration>
           <archive>
             <manifest>
-              <addClasspath>true</addClasspath>
-              <classpathPrefix>lib/</classpathPrefix>
               <mainClass>${main.class}</mainClass>
             </manifest>
           </archive>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>copy-dependencies</id>
-            <goals>
-              <goal>copy-dependencies</goal>
-            </goals>
-            <phase>prepare-package</phase>
-            <configuration>
-              <overWriteReleases>false</overWriteReleases>
-              <outputDirectory>${project.build.directory}/lib</outputDirectory>
-              <silent>true</silent>
-              <includeScope>runtime</includeScope>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>

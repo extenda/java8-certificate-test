@@ -65,7 +65,7 @@ public final class TestConnection {
       System.out.println("No domains specified.");
       System.out.println();
       System.out.println(
-          "usage: docker run --rm extenda/java8-certificate-test:u102 [DOMAIN ...]");
+          "usage: java -jar java8-certificate-test.jar [--patch] [DOMAIN ...]");
       exit = 1;
     }
 
